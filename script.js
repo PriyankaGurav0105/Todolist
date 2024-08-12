@@ -10,3 +10,18 @@ addBtn.addEventListener("click", function(){
         taskInput.value ="";
     }
 });
+
+//creating a new task
+function createTask(text){
+    const taskItem = document.createElement("li");
+    taskItem.innerHTML='
+    <span>${text}</span>
+    <button class = "delete">Delete</button>
+    ';
+    taskList.appendChild(taskItem);
+
+    // Delete task
+    const deleteBtn = taskItem.querySelector(".delete");
+    deleteBtn.addEventListener("click", () => {
+        taskItem.remove();
+});
